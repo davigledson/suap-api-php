@@ -3,7 +3,7 @@
     "description": "Wrapper PHP para a API do SUAP.",
     "type": "library",
     "require": {
-        "guzzlehttp/guzzle": "~6.0"
+        "guzzlehttp/guzzle": "^7.0"
     },
     "license": "MIT",
     "authors": [
