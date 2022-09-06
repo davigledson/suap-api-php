@@ -89,10 +89,10 @@ class SUAP
         if ($response->getStatusCode() == 200) {
             // Decodifica a resposta JSON para um array.
             $data = json_decode($response->getBody(), true);
-
+            
             // Seta o token se solicitado. Padrão é true.
-            if ($setToken && isset($data['token'])) {
-                $this->setToken($data['token']);
+            if ($setToken && isset($data['access'])) {
+                $this->setToken($data['access']);
             }
         }
 
@@ -252,7 +252,7 @@ class SUAP
     {
         $response = $this->client->request('GET', $url, [
             'headers' => [
-                'Authorization' => 'JWT '.$this->token,
+                'Authorization' => 'Bearer '.$this->token,
             ],
         ]);
 
